@@ -1,37 +1,21 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON security</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Amiri');
+    </style>
+</head>
+<body>
 
-You can use the [editor on GitHub](https://github.com/zahrababaiee/zahrababaiee.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+<h4>گوگل در ابتدای پاسخ‌های JSONای که private هستند یک حلقه به صورت while(1) می‌گذارد. علت این کار چیست؟</h4>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<p>این عمل از ربوده شدن JSON جلوگیری می‌کند. در تئوری محتوای پاسخ‌های HTTP با سیاست same origin محافظت می‌شوند: صفحات از یک دامنه نمی‌توانند اطلاعاتی از صفحات از دامنه‌ای دیگر به دست بیاورند. در نتیجه سایت‌های مخرب نمی‌توانند درخواست‌های AJAX بدهند، اما می‌توانند از طریق تگ script شامل URL شوند و از این طریق محتوای آبجکت های JSON را بخوانند.</p>
+<p>گوگل با قرار دادن while(1) در ابتدای محتوای JSON اطمینان حاصل می‌کند که محتوای آن به عنوان کد جاوا اسکریپت خوانده نمی‌شود و حمله کننده‌ها در while(1) گیر می‌کنند. گاهی نیز با قرار دادن توکن‌های نامعتبر مانند &&&start&&& قبل از JSON از اجرا نشدن آن مطمئن می‌شوند. </p>
+<p>کارهای مشابهی مثل قراردادن for( ; ; ); نیز در فیسبوک دیده شده که عملکردی مشابه آنچه گفته شد دارند.</p>
+<P>با درخواست AJAX میتوان به کل محتوای JSON دسترسی کامل پیدا کرد اما قرار دادن یک تگ script بدون هیچ گونه پردازشی صرفا کد را به صورت کورکورانه اجرا می‌کند، درنتیجه میتوان به سادگی باعث شد که در حلقه بی نهایت بیفتد و یا با خطای syntax مواجه شود.</P>
+<p>خواندن محتوای JSON ها با جاوااسکریپت به این صورت انجام می شود که global array object را بازتغریف می‌کنند، به طوری که هرگاه مقدار یک property ست می‌شود، حتی وقتی آرایه ساخته میشود، مقدارش به بیرون فرستاده می شود. نتیجه اینکه یک وبسایت سوم میتواند پاسخ ها را شنود کند.</p>
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/zahrababaiee/zahrababaiee.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+</body>
+</html>
