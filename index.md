@@ -7,10 +7,12 @@
     @import url('https://fonts.googleapis.com/css?family=Amiri|Scheherazade');
     .txt {
     font-family: 'Scheherazade', Tahoma;
-    font-size: 16px;
+    font-size: 24px;
     }
     .head{
     color = blue;
+    font-family: 'Scheherazade', Tahoma;
+    font-size: 24px;
     }
     </style>
 </head>
