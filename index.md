@@ -1,13 +1,13 @@
 
+
 <html>
 <head>
     <meta charset="UTF-8">
     <title>JSON security</title>
     <style>
-    @import url('https://fonts.googleapis.com/css?family=Amiri');
-    <style>
+    @import url('https://fonts.googleapis.com/css?family=Amiri|Scheherazade');
     .txt {
-    font-family: 'Amiri', Tahoma;
+    font-family: 'Scheherazade', Tahoma;
     }
     </style>
 </head>
