@@ -1,13 +1,18 @@
+
 <html>
 <head>
     <meta charset="UTF-8">
     <title>JSON security</title>
     <style>
     @import url('https://fonts.googleapis.com/css?family=Amiri');
+    <style>
+    .txt {
+    font-family: 'Amiri', Tahoma;
+    }
     </style>
 </head>
 <body>
-<div dir="rtl">
+<div dir="rtl" class="txt">
 <h4>گوگل در ابتدای پاسخ‌های JSONای که private هستند یک حلقه به صورت (1)while می‌گذارد. علت این کار چیست؟</h4>
 
 <p>این عمل از ربوده شدن JSON جلوگیری می‌کند. در تئوری محتوای پاسخ‌های HTTP با سیاست same origin محافظت می‌شوند: صفحات از یک دامنه نمی‌توانند اطلاعاتی از صفحات از دامنه‌ای دیگر به دست بیاورند. در نتیجه سایت‌های مخرب نمی‌توانند درخواست‌های AJAX بدهند، اما می‌توانند از طریق تگ script شامل URL شوند و از این طریق محتوای آبجکت های JSON را بخوانند.</p>
